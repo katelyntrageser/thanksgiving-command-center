@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanksgiving Kitchen Command Center</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.topnav{padding:20px}.sticky-task{position:sticky;top:0;background:#912f40;color:#fff;padding:14px 20px;z-index:1000;font-weight:700}.equipment{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}.equip{background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.1)}.controls{display:flex;gap:12px;flex-wrap:wrap}.progress-wrap{margin-top:10px} .schedule-table input{transform:scale(1.2)} .dashboard .stat-card{pointer-events:none!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;border:none!important;padding:8px!important;} .dashboard .stat-card:hover{transform:none!important;box-shadow:none!important;} 
+.table-wrapper{overflow:visible}.schedule-table{width:100%}.schedule-table tr:first-child{display:none}.schedule-table,.schedule-table tbody,.schedule-table tr,.schedule-table td{display:block;width:100%}.schedule-table tr{background:#fff;margin:0 0 16px 0;border-radius:16px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,.08);border-left:6px solid #912f40}.schedule-table td{border:none;padding:4px 0}.schedule-table td:nth-child(1){font-size:1.25rem;font-weight:700}.schedule-table td:nth-child(2){font-weight:700;color:#912f40;font-size:1.05rem}.schedule-table td:nth-child(3){padding-top:8px}.schedule-table input{transform:scale(1.5)}.equipment-simple{display:block!important;background:#fafafa;padding:12px 0}.equipment-simple .equip{background:none!important;box-shadow:none!important;border:none!important;padding:8px 0;margin:0;font-size:1.05rem}.equipment-simple h3{margin:0;font-size:1rem;color:#444}</style>
+</head>
+<body>
+<style>.floating-home{position:fixed;right:16px;top:72px;background:#c62828;color:#fff;padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:5000;display:block;color:#fff}.floating-home.show{display:block}</style><a href="index.html" class="floating-home" id="homeBtn">🏠 Home</a>
+<div class="sticky-task" style="background:linear-gradient(135deg,#f4c542,#ffd95a);color:#3a2a00;font-weight:700">CURRENT TASK: <span id="currentTask">Defrost turkey</span></div>
+<header class="hero">
+<h1>🦃 Thanksgiving Kitchen Command Center</h1>
+<p>Thursday, November 26, 2026</p>
+</header>
+<div class="container">
+<div class="dashboard">
+<div class="stat-card" style="box-shadow:none;border:1px solid #ddd;background:#f5f5f5;cursor:default;transform:none;"><div class="stat-title">Current Turkey Status</div><div id="turkeyStatus" class="stat-value" style="font-size:1.1rem">Dry Brine & Refrigerate (10:00 AM-1:45 PM)</div></div>
+<div class="stat-card" style="box-shadow:none;border:1px solid #ddd;background:#f5f5f5;cursor:default;transform:none;"><div class="stat-title">Up Next</div><div class="stat-value" id="upNext" style="font-size:1.1rem"><ul><li>Prep spatchcock turkey (Thu 10:00 AM)</li></ul></div></div>
+<div class="stat-card" style="box-shadow:none;border:1px solid #ddd;background:#f5f5f5;cursor:default;transform:none;"><div class="stat-title">Progress</div><div class="stat-value" id="progressPct">0%</div></div>
+<div class="stat-card" style="box-shadow:none;border:1px solid #ddd;background:#f5f5f5;cursor:default;transform:none;"><div class="stat-title">Schedule</div><div class="stat-value" style="font-size:1rem">Appetizers: 1:30 PM<br>Dinner: 4:00 PM<br>Dessert: 6:00 PM</div></div>
+</div>
+<div class='card'><h2>🍽 Full Menu</h2><p><strong>Appetizers:</strong> Stuffed Mushrooms, Spinach Dip, Gourmet Cheeses, Fresh Vegetables, Baguette</p><p><strong>Dinner:</strong> Turkey, Stuffing, Mashed Potatoes, Salad, Roasted Vegetables, Honey Garlic Tofu, Cranberry Sauce, Rolls</p><p><strong>Dessert:</strong> Pumpkin Pie, Bourbon Pecan Pie, Brownies, Peppermint Ice Cream</p><div class="card"><h2>🍳 Kitchen Equipment</h2><div class="equipment-simple"><div class="equip">🔥 Oven<br>Turkey • Mushrooms • Dip • Tofu • Vegetables</div><div class="equip">🥔 Stovetop<br>Potatoes & Gravy</div><div class="equip">🥘 Crockpot<br>Not Needed</div><div class="equip">🍠 Air Fryer<br>Sweet Potatoes</div></div></div>
+<div class="card">
+<h2>✅ Master Thanksgiving Schedule</h2>
+<div class="controls"><button class="btn" onclick="window.print()">🖨 Print Schedule</button><button class="btn btn-secondary" onclick="resetChecks()">🔄 Reset Checklist</button></div>
+<div class="progress-wrap"><progress id="progress" max="17" value="0"></progress></div>
+<div class="table-wrapper">
+<table class="schedule-table"><tr><td><input class='task' type='checkbox'></td><td>Wednesday</td><td>Prepare cranberry sauce, pumpkin pie, bourbon pecan pie, and brownies.</td><td>—</td><td>Kitchen</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>10:00 AM</td><td>Prep spatchcock turkey and place in refrigerator for at least 2 hours. <a href="https://www.spendwithpennies.com/spatchcock-turkey/#wprm-recipe-container-141066" target="_blank" rel="noopener noreferrer">Recipe</a></td><td>—</td><td>Counter</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>12:50 PM</td><td>Bake stuffed mushrooms. <a href="https://www.veganricha.com/vegan-stuffed-mushrooms/" target="_blank" rel="noopener noreferrer">Recipe</a></td><td>350°F</td><td>Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>1:05 PM</td><td>Bake spinach dip. <a href="https://onmykidsplate.com/baked-spinach-dip/" target="_blank" rel="noopener noreferrer">Recipe</a></td><td>350°F</td><td>Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>1:30 PM</td><td>Serve appetizers.</td><td>Warm</td><td>Serving Area</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>1:45 PM</td><td>Put spatchcock turkey in oven.</td><td>450°F</td><td>Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>2:00 PM</td><td>Turkey roasting. Free time for kitchen prep.</td><td>450°F</td><td>Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:00 PM</td><td>Begin mashed potatoes and gravy. <a href="https://www.noracooks.com/easy-vegan-gravy/" target="_blank" rel="noopener noreferrer">Recipe</a></td><td>Simmer</td><td>Stovetop</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:05 PM</td><td>Remove turkey from oven and rest uncovered for 25 minutes.</td><td>—</td><td>Counter</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:15 PM</td><td>Cook sweet potatoes.</td><td>Air Fry</td><td>Air Fryer</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:20 PM</td><td>Bake honey garlic tofu. <a href="https://www.plantpowercouple.com/recipes/vegan-honey-chicken-recipe/" target="_blank" rel="noopener noreferrer">Recipe</a></td><td>425°F</td><td>Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:20 PM</td><td>Roast green vegetables.</td><td>450°F</td><td>Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:30 PM</td><td>Carve rested turkey and transfer to serving platter.</td><td>—</td><td>Kitchen</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:45 PM</td><td>Drain and mash potatoes.</td><td>—</td><td>Stovetop</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:50 PM</td><td>Finish gravy using turkey drippings and remove vegetables.</td><td>—</td><td>Stove/Oven</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>3:55 PM</td><td>Transfer food to serving dishes and arrange carved turkey.</td><td>—</td><td>Kitchen</td></tr>
+<tr><td><input class='task' type='checkbox'></td><td>4:00 PM</td><td>🍽 Dinner is served.</td><td>—</td><td>Table</td></tr></table></div></div>
+</div>
+
+
+<script>
+function updateProgress(){
+ const tasks=[...document.querySelectorAll(".task")];
+ const done=tasks.filter(t=>t.checked).length;
+ const pct=Math.round(done/tasks.length*100);
+ document.getElementById("progress").max=tasks.length;
+ document.getElementById("progress").value=done;
+ document.getElementById("progressPct").textContent=pct+"%";
+ tasks.forEach((t,i)=>localStorage.setItem("tg_"+i,t.checked?"1":"0"));
+}
+function resetChecks(){document.querySelectorAll('.task').forEach((t,i)=>{t.checked=false;localStorage.removeItem('tg_'+i);});updateProgress();}
+window.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.task').forEach((t,i)=>{if(localStorage.getItem('tg_'+i)==='1')t.checked=true;t.addEventListener('change',updateProgress);});updateProgress();});
+</script></body></html>
