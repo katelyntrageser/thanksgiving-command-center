@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Trageser & Tramazzo Thanksgiving</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:900px;margin:35px auto}.countdown-tile{background:rgba(255,255,255,.15);padding:20px;border-radius:16px}.countdown-number{font-size:3rem;font-weight:800}.countdown-label{letter-spacing:2px}.badge-row{margin:20px 0}.badge{display:inline-block;background:rgba(255,255,255,.18);padding:10px 18px;border-radius:999px;margin:4px}.nav-feature{font-size:1.05rem;line-height:1.9}.hero-card{font-size:1.1rem;max-width:700px;margin:25px auto 0}.primary-nav{transform:none;padding:28px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card.full-width{grid-column:1/-1}
+.section-title{text-align:center;margin-bottom:10px;font-size:2rem;font-weight:800}.section-subtitle{text-align:center;opacity:.8;margin-bottom:25px}.info-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px;text-align:center;cursor:default;box-shadow:none}.navigation-section{margin-top:50px}.nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}.nav-card{display:block;text-decoration:none;color:white;background:linear-gradient(135deg,#8B4513,#C96A21);border-radius:24px;padding:30px;border:3px solid #FFD166;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:.25s ease;cursor:pointer}.nav-card:hover{transform:translateY(-6px) scale(1.02)}.tap-indicator{margin-top:20px;padding:12px;text-align:center;font-weight:800;background:rgba(255,255,255,.18);border-radius:12px;color:#FFD166} .info-card .stat-title{font-size:1.1rem;font-weight:700}.info-card .stat-value{font-size:2.4rem;font-weight:800}.info-card p{font-size:1rem;line-height:1.5}.section-title{font-size:2.2rem!important}.section-subtitle{font-size:1.15rem}.nav-card{padding:36px;min-height:320px}.nav-card h2{font-size:2rem}.nav-feature{font-size:1.25rem;line-height:2}.tap-indicator{font-size:1.35rem;font-weight:900;padding:18px}@media(max-width:768px){.info-card .stat-value{font-size:2.5rem}.info-card p{font-size:1.1rem}.nav-card h2{font-size:2rem}.nav-feature{font-size:1.3rem;line-height:2.1}.tap-indicator{font-size:1.5rem;padding:20px}} </style>
+</head><body>
+<header class="hero">
+<h1>🍁 2026 Trageser & Tramazzo Thanksgiving</h1>
+<p>Food • Friends • Football • Ping Pong Glory</p>
+<div class="badge-row"><span class="badge">THURSDAY</span><span class="badge">NOVEMBER 26, 2026</span></div>
+<div class="countdown-grid"><div class="countdown-tile"><div id="days" class="countdown-number">0</div><div class="countdown-label">DAYS</div></div><div class="countdown-tile"><div id="hours" class="countdown-number">0</div><div class="countdown-label">HOURS</div></div><div class="countdown-tile"><div id="mins" class="countdown-number">0</div><div class="countdown-label">MINUTES</div></div><div class="countdown-tile"><div id="secs" class="countdown-number">0</div><div class="countdown-label">SECONDS</div></div></div>
+<div class="hero-card">Join us for a day of great food, friendly competition, and Thanksgiving traditions.</div>
+</header>
+<div class="container">
+<div class="schedule-section"><h2 class="section-title">Thanksgiving Schedule</h2><div class="dashboard">
+<div class="info-card"><div class="stat-title">🍃 APPETIZERS</div><div class="stat-value">1:30 PM</div><p>Spinach Dip<br>Stuffed Mushrooms</p></div>
+<div class="info-card"><div class="stat-title">🏓 TOURNAMENT</div><div class="stat-value">2:00 PM</div><p>Team Draw<br>Championship</p></div>
+<div class="info-card"><div class="stat-title">🍽 DINNER</div><div class="stat-value">4:00 PM</div><p>Turkey Feast<br>Gather Around</p></div>
+<div class="info-card"><div class="stat-title">🥧 DESSERTS</div><div class="stat-value">6:00 PM</div><p>Pie<br>Brownies</p></div>
+</div>
+<div class="card"><h2>Welcome to Thanksgiving Headquarters</h2><p>Use the Kitchen Command Center to manage dinner preparations and the Ping Pong Championship page to handle team draws, brackets, and scores.</p></div>
+<div class="grid grid-2">
+<div class="card primary-nav"><h2>🍽 Kitchen Command Center</h2><div class="nav-feature">✓ Full Menu<br>✓ Complete Cooking Schedule<br>✓ Progress Tracker<br>✓ Equipment Dashboard</div><br><a href="cooking.html" class="btn">OPEN KITCHEN COMMAND CENTER</a></div>
+<div class="card primary-nav"><h2>🏓 Ping Pong Championship</h2><div class="nav-feature">✓ Random Team Draw<br>✓ Tournament Bracket<br>✓ Champion Celebration</div><br><a href="tournament.html" class="btn">OPEN CHAMPIONSHIP</a></div>
+</div>
+<div class="card full-width"><h2>✨ Today's Highlights</h2><p>🏓 Random ping pong team draw</p><p>🍁 Homemade pies and brownies</p><p>🏈 Football all afternoon</p><p>🏆 Championship trophy presentation</p></div>
+</div>
+<footer><h3>2026 Trageser & Tramazzo Thanksgiving</h3><p>Gather • Eat • Compete • Celebrate</p></footer>
+<script>function update(){const t=new Date('2026-11-26T16:00:00')-new Date();if(t<0)return;days.textContent=Math.floor(t/86400000);hours.textContent=Math.floor(t%86400000/3600000);mins.textContent=Math.floor(t%3600000/60000);secs.textContent=Math.floor(t%60000/1000);}update();setInterval(update,1000);</script>
+</body></html>
